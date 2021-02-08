@@ -33,7 +33,6 @@
 		-webkit-justify-content: center;
 		justify-content: center;
 		text-align: center;
-		padding: 20px;
 	}
 
 	@media (max-width: 600px) {
@@ -211,14 +210,14 @@
 
 	.headerContainer {
 		position: relative;
-		top: 0;
-		padding: 20px 40px;
+		top: 0px;
+		padding:0px;
 		background-color: #3B85D0;
 		min-height: 100px;
 	}
 
 	.containerInputSearch {
-		width: 95%;
+		width: 55%;
 		height: 30px;
 		background-color: #3B85D0;
 	}
