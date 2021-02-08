@@ -1,0 +1,53 @@
+{
+  "name": "moviegallery",
+  "version": "1.0.0",
+  "description": "movie gallery web apps",
+  "main": "index.tsx",
+  "scripts": {
+    "start": "webpack --mode development --history-api-fallback ",
+    "dev": "webpack-dev-server --history-api-fallback --mode development --open",
+    "build": "webpack --history-api-fallback --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edyCodeforLife/MovieGallery.git"
+  },
+  "author": "Edy Susanto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edyCodeforLife/MovieGallery/issues"
+  },
+  "homepage": "https://github.com/edyCodeforLife/MovieGallery#readme",
+  "dependencies": {
+    "@ant-design/icons": "4.3.0",
+    "antd": "4.9.4",
+    "axios": "0.21.0",
+    "dom": "0.0.3",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-router-dom": "5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.10.5",
+    "@babel/plugin-proposal-class-properties": "7.10.4",
+    "@babel/preset-env": "7.10.4",
+    "@babel/preset-react": "7.10.4",
+    "@types/react": "17.0.0",
+    "babel-loader": "8.1.0",
+    "connect-modrewrite": "0.10.2",
+    "css-loader": "3.6.0",
+    "express": "4.17.1",
+    "express-static-gzip": "2.0.8",
+    "file-loader": "6.0.0",
+    "html-webpack-plugin": "4.3.0",
+    "lodash": "4.17.20",
+    "mini-css-extract-plugin": "0.9.0",
+    "node-sass": "4.14.1",
+    "sass-loader": "9.0.2",
+    "ts-loader": "8.0.11",
+    "typescript": "4.1.2",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  }
+}

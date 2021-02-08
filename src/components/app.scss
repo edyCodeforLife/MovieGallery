@@ -1,0 +1,389 @@
+@import '~antd/dist/antd.css';
+
+	body {
+		background: #ececec;
+		background-size: 300% 300%;
+		-webkit-animation: Background 25s ease infinite;
+		-moz-animation: Background 25s ease infinite;
+		animation: Background 25s ease infinite;
+		width: 100%;
+	}
+
+	.full-screen {
+		position: relative;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	//you need to setup file-loader in webpack before you can use images
+		// background: url("../../assests/image/background.png");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-direction: column;
+		//_ works with row or column_
+
+		flex-direction: column;
+		-webkit-align-items: center;
+		align-items: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+		text-align: center;
+		padding: 20px;
+	}
+
+	@media (max-width: 600px) {
+		.full-screen {
+			padding: 0px;
+		}
+	}
+
+	.homeContainer {
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.adjustHomeContainer {
+		height: 100%;
+		display: inline-flex;
+		flex-direction: column;
+	}
+
+	.pageContainer {
+		width: 100%;
+		height: 90vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.loginScreen {
+		width: 40%;
+		height: auto;
+		position: relative;
+		border: 4px solid #218DD7;
+		border-radius: 10px;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background-color: #E6F1FA;
+		box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.6);
+	}
+
+	@media (max-width: 600px) {
+		.loginScreen {
+			width: 90%;
+			height: 58%;
+		}
+	}
+
+	.headerPage {
+		width: 100%;
+		height: 80px;
+		border-top: 1px solid #eaeaea;
+		display: flex;
+		background-color: #fff;
+		justify-content: space-between;
+		position: fixed;
+		top: 0;
+		align-items: center;
+		z-index: 999;
+		padding: 15px 50px;
+	}
+
+	@media (max-width: 600px) {
+		.headerPage {
+			padding: 15px;
+		}
+	}
+
+	.userStyle {
+		color:  #218DD7;
+		margin-left: 5px;
+	}
+
+	.headerSection {
+		color: #218DD7;
+		font-weight: 600;
+		cursor: pointer;
+	}
+
+	.footer {
+		width: 100%;
+		height: 80px;
+		border-top: 1px solid #eaeaea;
+		display: flex;
+		background-color: #fff;
+		justify-content: center;
+		position: fixed;
+		bottom: 0;
+		align-items: center;
+		overflow-x: hidden;
+	}
+
+	.loginTitle {
+		color: #218DD7;
+	}
+
+	.containerScreen {
+		width: 92%;
+		height: 83%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background-color:white;
+		box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.6);
+		padding: 30px;
+	}
+
+	.adjustContainer {
+		overflow: scroll;
+		padding: 20px;
+		margin-top: 20px;
+		height: 70vh
+	}
+
+	.buttonDownloadNews {
+		margin: 20px 0px;
+		position: relative;
+		top: 40px;
+		width: 100%;
+		padding-left: 54px;
+		text-align: left;
+	}
+
+	.dataNewsContainer {
+		height: inherit;
+		text-align: left;
+	}
+
+	.dataNewsContainer > img {
+		text-align: center;
+	}
+
+	@media (max-width: 600px) {
+		.containerScreen {
+			margin-top: 70px;
+			overflow-y: scroll;
+			max-height: 90%;
+			padding: 0px;
+		}
+	}
+
+	.nameStyle {
+		color: rgba(0,0,0,.6);
+		font-weight: 600;
+		font-size: 16px;
+	}
+
+	.priceStyle {
+		color: #FFA625;
+		font-weight: 600;
+	}
+
+	.furnitureStyle {
+		color: #3B85D0;
+		font-size: 12px;
+		margin-top: 10px;
+	}
+
+	.descriptionStyle {
+		margin-top: 10px;
+		color: rgba(0,0,0,.6);
+		font-size: 12px;
+	}
+
+	.deliveryTimeStyle {
+		color: #3B85D0;
+		font-size: 14px;
+		margin-top: 10px;
+		font-weight: 600;
+	}
+
+	.headerContainer {
+		position: relative;
+		top: 0;
+		padding: 20px 40px;
+		background-color: #3B85D0;
+		min-height: 100px;
+	}
+
+	.containerInputSearch {
+		width: 95%;
+		height: 30px;
+		background-color: #3B85D0;
+	}
+
+	.cardListStyle {
+		background-color: #E6F1FA;
+		border-radius: 5px;
+		padding: 12px;
+	}
+
+	@media (max-width: 600px) {
+		.containerInputSearch {
+			width: 100%;
+		}
+	}
+
+	.contentSubtitile {
+		font-weight: 600;
+		color: #3B85D0;
+		margin-right: 5px;
+	}
+
+	.anticon-check {
+		background: green;
+		color: white;
+		border: 1px solid black;
+	}
+
+	.inputSearch {
+		border: 6px solid #E6F1FB;
+		width: 100%;
+		background:transparent;
+		color: white;
+		outline: none;
+	}
+
+	.textAdjust > p {
+		text-align: left;
+	}
+
+	.userWelcome {
+		text-align: right;
+		font-size: 20px;
+		font-weight: 600;
+		padding-right: 26px;
+	}
+
+	@media (max-width: 600px) {
+		.userWelcome {
+			padding-right: 0px;
+			font-size: 16px;
+		}
+	}
+
+	.noDataContainer {
+		width: 100%;
+		height: 100%;
+		text-align: center;
+	}
+
+	.containerFilterCountry {
+		width: 95%;
+		height: 30px;
+		margin-left: 20px;
+	}
+
+	.noDataStyle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 50px;
+		font-size: 20px;
+		font-weight: 600;
+		font-style: italic;
+		color: #3B85D0;
+	}
+
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: white;
+		opacity: .6; /* Firefox */
+	}
+	  
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: white;
+	}
+
+	::-ms-input-placeholder { /* Microsoft Edge */
+		color: white;
+	}
+
+	h1 {
+		color: #fff;
+		font-family: "Open Sans", sans-serif;
+		font-weight: 800;
+		font-size: 4em;
+		letter-spacing: -2px;
+		text-align: center;
+		text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.6);
+	
+		&:after {
+		display: block;
+		color: #fff;
+		letter-spacing: 1px;
+		font-family: "Poiret One", sans-serif;
+		content: "React project powered by webpack and babel with support for sass";
+		font-size: 0.4em;
+		text-align: center;
+		}
+	}
+
+	.button-line {
+		font-family: "Open Sans", sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		background: transparent;
+		border: 1px solid #fff;
+		color: #fff;
+		text-align: center;
+		font-size: 1.4em;
+		opacity: 0.8;
+		padding: 20px 40px;
+		text-decoration: none;
+		transition: all 0.5s ease;
+		margin: 0 auto;
+		display: block;
+
+		&:hover {
+		opacity: 1;
+		background-color: #fff;
+		color: grey;
+		}
+	}
+	
+	@-webkit-keyframes Background {
+		0% {
+		background-position: 0% 50%;
+		}
+		50% {
+		background-position: 100% 50%;
+		}
+		100% {
+		background-position: 0% 50%;
+		}
+	}
+	
+	@-moz-keyframes Background {
+		0% {
+		background-position: 0% 50%;
+		}
+		50% {
+		background-position: 100% 50%;
+		}
+		100% {
+		background-position: 0% 50%;
+		}
+	}
+	
+	@keyframes Background {
+		0% {
+		background-position: 0% 50%;
+		}
+		50% {
+		background-position: 100% 50%;
+		}
+		100% {
+		background-position: 0% 50%;
+		}
+}
