@@ -5,11 +5,14 @@ import { QrsToObj } from '../../global/function/index';
 
 function _DetailPage(props) {
 	const _service: IMoviesData = new MoviesData();
-	const [ detailMovies, setDetailMovies ] = useState({})
+	const [ detailMovies, setDetailMovies ] = useState({});
+	const [ loading, setLoading ] = useState(true);
+
 	const getDetailMovies = () => {
 		let qrs = QrsToObj(window.location.search);
 		_service.getDetail(qrs.movie_id, {
 			Success: (res:any) => {
+				setLoading(false);
 				setDetailMovies(res)
 			}
 		})
@@ -23,6 +26,7 @@ function _DetailPage(props) {
 		<ScreenHomePage
 			detailMovies={detailMovies}
 			history={props.history}
+			loading={loading}
 			{...props}
 		/>
 	)

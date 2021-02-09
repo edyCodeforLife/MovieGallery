@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Card, Avatar, Image, Row, Col } from 'antd';
+import { Card, Image, Row, Col } from 'antd';
 import { LikeTwoTone } from '@ant-design/icons';
 import { formattedDate } from '../../global/function/index';
 import { IMoviesInterface } from '../../services/services/movies';
@@ -13,11 +13,7 @@ export interface ICardProps {
 function _CardComponent(props:any) {
 	const { loading, item, onRedirectDetail } = props;
 	const { Meta } = Card;
-	const datedata = new Date(2020,3,16,12,44,23,55).toISOString();
-	// const dateNew = Date.parse(datedata);
-	// console.log(dateNew)
-	// console.log(Date.parse(item.showTime))
-	console.log(item.showTime < datedata )
+
     return(
 		<Card
 			onClick={() => onRedirectDetail(item.id)}
@@ -34,12 +30,6 @@ function _CardComponent(props:any) {
 				/>
 			}
 		>
-			{/* <Meta
-				avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-				title={loading ? null : item.title}
-				description={<LikeOutlined/> + item.like}
-				style={{textAlign: 'left'}}
-			/> */}
 			<Row style={{width: '100%', textAlign: 'left'}}>
 				<Col md={24} xs={24}>
 					<h3>{loading? null : item.title}</h3>

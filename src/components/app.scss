@@ -96,6 +96,7 @@
 		top: 0px;
 		left: 0px;
 		align-items: center;
+		height: auto;
 		z-index: 999;
 		padding: 15px 56px;
 	}
@@ -164,6 +165,12 @@
 		background-position: top;
 		background-attachment: fixed;
 		border-radius: 12px;
+	}
+
+	@media (max-width: 600px) {
+		.detailContainer {
+			width: 85%;
+		}
 	}
 
 	.supStyle {
@@ -247,6 +254,12 @@
 		width: 55%;
 		height: 30px;
 		background-color: #3B85D0;
+	}
+
+	@media (max-width: 600px) {
+		.containerInputSearch {
+			margin: 10px 0px;
+		}
 	}
 
 	.cardListStyle {

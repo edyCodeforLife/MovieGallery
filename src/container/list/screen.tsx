@@ -21,14 +21,18 @@ interface IScreenListProps {
 	options:any;
 	querySearch: string;
 	history:any;
+	onCalendarChange?(dates:any, dateString:any, info:any);
+	clickDateFilter():void;
+	datePick:any;
+	dateString: string[];
 }
 
 function _ScreenHomePage(props:IScreenListProps
 	) {
-	const { onSearchChanged, dummyArr, history, options, querySearch, onRedirectDetail, masterListData, listData, selectedIndex, loading, onChangePagination, currentPage } = props;
+	const { onSearchChanged, datePick, clickDateFilter, onCalendarChange, dummyArr, history, options, querySearch, onRedirectDetail, masterListData, listData, selectedIndex, loading, onChangePagination, currentPage, dateString } = props;
 
 	const mapArr = loading? dummyArr : listData && listData[selectedIndex];
-	const pageTotalRelative = querySearch === "" ? masterListData.length : listData.length;
+	const pageTotalRelative = querySearch === "" && (datePick.start === null && datePick.end === null) ? masterListData.length : listData.length;
 
 	return (
 		<div className="homeContainer">
@@ -37,6 +41,8 @@ function _ScreenHomePage(props:IScreenListProps
 				onSearchChanged={onSearchChanged}
 				options={options}
 				history={history}
+				clickDateFilter={clickDateFilter}
+				onCalendarChange={onCalendarChange}
 				{...props}
 			/>
 
