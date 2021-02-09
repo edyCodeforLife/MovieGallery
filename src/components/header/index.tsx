@@ -21,7 +21,7 @@ function _Header(props: IHeaderProps) {
 		<div className="headerPage">
 			<Row style={{width: '100%', justifyContent: 'space-between' }} >
 				<Col md={12} xs={24} style={{textAlign: 'left'}}>
-					<h2>Movies Gallery</h2>
+					<h2>Movies <span className="galleryStyle">Gallery</span></h2>
 				</Col>
 				<Col md={12} xs={24} style={webkitRight}>
 					<div className="containerInputSearch">
