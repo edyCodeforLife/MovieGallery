@@ -4,7 +4,7 @@ Movie Gallery Web Apps
 Hello, My name Edy Susanto i make Movie Gallery web apps using React + Typescript.
 
 # Demo
-
+[Demo click here](https://moviesmockable.netlify.app/)
 # API
 [Rest Service movies list endpoint mockable.io]("https://5f50ca542b5a260016e8bfb0.mockapi.io/api/v1/movies") and
 [Rest Service detail endpoint mockable.io]("https://5f50ca542b5a260016e8bfb0.mockapi.io/api/v1/movies/1")
