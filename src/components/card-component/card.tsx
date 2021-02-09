@@ -6,14 +6,21 @@ import { IMoviesInterface } from '../../services/services/movies';
 
 export interface ICardProps {
 	loading: boolean;
-	item: IMoviesInterface
+	item: IMoviesInterface;
+	onRedirectDetail(id:string):void
 }
 
 function _CardComponent(props:any) {
-	const { loading, item } = props;
+	const { loading, item, onRedirectDetail } = props;
 	const { Meta } = Card;
+	const datedata = new Date(2020,3,16,12,44,23,55).toISOString();
+	// const dateNew = Date.parse(datedata);
+	// console.log(dateNew)
+	// console.log(Date.parse(item.showTime))
+	console.log(item.showTime < datedata )
     return(
 		<Card
+			onClick={() => onRedirectDetail(item.id)}
 			hoverable
 			loading={loading}
 			style={{ width: 280 }}

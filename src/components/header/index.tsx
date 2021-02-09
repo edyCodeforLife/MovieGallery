@@ -1,16 +1,18 @@
 import React, { memo } from 'react';
-import { Select, Row, Col } from 'antd';
+import { AutoComplete, Row, Col } from 'antd';
 import { map } from 'lodash';
 
 interface IHeaderProps {
-	onSearchChanged(e:any):void;
+	onSearchChanged?(e:any):void;
+	isList:Boolean;
+	options?: any;
+	history:any;
 }
 
 function _Header(props: IHeaderProps) {
-	const { onSearchChanged } = props;
-	const onSearch = (e) => {
-		e.persist();
-		onSearchChanged(e.target.value);
+	const { onSearchChanged, history, isList, options } = props;
+	const onSearch = (value) => {
+		onSearchChanged(value);
 	}
 
 	const webkitRight = {
@@ -19,20 +21,27 @@ function _Header(props: IHeaderProps) {
 
     return(
 		<div className="headerPage">
-			<Row style={{width: '100%', justifyContent: 'space-between' }} >
+			<Row onClick={() => history.push("/")} style={{width: '100%', justifyContent: 'space-between', cursor: 'pointer' }} >
 				<Col md={12} xs={24} style={{textAlign: 'left'}}>
 					<h2>Movies <span className="galleryStyle">Gallery</span></h2>
 				</Col>
-				<Col md={12} xs={24} style={webkitRight}>
-					<div className="containerInputSearch">
-						<input
-							onChange={(e) => onSearch(e)}
-							placeholder="Search Movies"
-							className="inputSearch"
-							type="text"
-						/>
-					</div>
-				</Col>
+				{isList && (
+					<Col md={12} xs={24} style={webkitRight}>
+						<div className="containerInputSearch">
+							<AutoComplete
+								onSearch={onSearch}
+								options={options}
+								placeholder="Search Movies"
+								className="inputSearch"
+								style={{color: '#3B85D0'}}
+								onSelect={onSearch}
+								filterOption={(inputValue, option) =>
+									option!.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+								}
+							/>
+						</div>
+					</Col>
+				)}
 			</Row>
 		</div>
 	)

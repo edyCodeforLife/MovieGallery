@@ -65,3 +65,15 @@ export const formattedDate = (
     }
     return undefined;
 };
+
+export const QrsToObj = (str) => {
+    let search = str.substring(1);
+    return search
+        ? JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g, '":"') + '"}', function(
+              key,
+              value
+          ) {
+              return key === '' ? value : decodeURIComponent(value);
+          })
+        : {};
+};

@@ -17,18 +17,26 @@ interface IScreenListProps {
 	onChangePagination(page:number):void;
 	currentPage: number;
 	loading: boolean;
+	onRedirectDetail(id:string):void;
+	options:any;
+	querySearch: string;
+	history:any;
 }
 
 function _ScreenHomePage(props:IScreenListProps
 	) {
-	const { onSearchChanged, dummyArr, masterListData, listData, selectedIndex, loading, onChangePagination, currentPage } = props;
+	const { onSearchChanged, dummyArr, history, options, querySearch, onRedirectDetail, masterListData, listData, selectedIndex, loading, onChangePagination, currentPage } = props;
 
 	const mapArr = loading? dummyArr : listData && listData[selectedIndex];
-	console.log(listData.length)
+	const pageTotalRelative = querySearch === "" ? masterListData.length : listData.length;
+
 	return (
 		<div className="homeContainer">
 			<HeaderComponent
+				isList={true}
 				onSearchChanged={onSearchChanged}
+				options={options}
+				history={history}
 				{...props}
 			/>
 
@@ -41,11 +49,13 @@ function _ScreenHomePage(props:IScreenListProps
 									key={idx}
 									loading={loading}
 									item={item}
+									onRedirectDetail={onRedirectDetail}
 
 								/>
 							</Col>
 						)
 					})}
+
 					{listData && listData[selectedIndex] && listData[selectedIndex].length > 0 && (
 						<Col md={24} xs={24}>
 							<Pagination
@@ -53,14 +63,13 @@ function _ScreenHomePage(props:IScreenListProps
 								defaultCurrent={1}
 								onChange={onChangePagination}
 								current={currentPage}
-								total={40}
+								pageSize={25}
+								total={pageTotalRelative}
 							/>
 						</Col>
 					)}
 				</Row>
 			</div>
-
-
 			<Footer />
 		</div>
 	);

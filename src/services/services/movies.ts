@@ -17,11 +17,6 @@ export interface IResponseSuccess {
 	Success?: <T>(res: T) => void;
 }
 
-// const headers = {
-// 	'Access-Control-Allow-Origin' : '*',
-//     'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-// }
-
 export interface IMoviesService {
 	getMoviesList(): AxiosPromise<IMoviesInterface[]>;
 	getDetail(id: string): AxiosPromise<IMoviesInterface>;

@@ -150,6 +150,22 @@
 		border-radius: 12px;
 	}
 
+	.detailContainer {
+		width: 42%;
+		height: auto;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background-color:white;
+		box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.6);
+		padding: 15px;
+		margin: 100px 0px;
+		background-position: top;
+		background-attachment: fixed;
+		border-radius: 12px;
+	}
+
 	.supStyle {
 		color: #3B85D0;
 		margin-left: 5px;

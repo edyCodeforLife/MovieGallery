@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import { ScreenHomePage } from './screen';
-import { filter, clone, debounce,chunk } from 'lodash';
+import { filter, clone, debounce,chunk, map } from 'lodash';
 import { MoviesData, IMoviesData } from '../../services/business/movies-data';
 
 function _HomePage(props) {
@@ -12,6 +12,7 @@ function _HomePage(props) {
 	const [ selectedIndex, setSelectedIndex ] = useState(0);
 	const [ currentPage, setCurrentPage ] = useState(1);
 	const [ querySearch, setQuerySearch ] = useState("");
+	const [ options, setOptions ] = useState([]);
 	const chunkNumber = 25;
 
 
@@ -24,15 +25,21 @@ function _HomePage(props) {
 	}
 	const getListMoviesData = () => {
 		staticArr();
+		let options = [];
 		_service.getMoviesList({
 			Success: (res:any) => {
 				setLoading(false);
+				map(res,item => {
+					options.push({
+						value: item.title
+					});
+				})
+				setOptions(options);
 				setMasterListData(res);
 				setListData(chunk(res,chunkNumber));
 			}
 		})
 	}
-
 
 	const filteredData = () => {
 		if (masterListData && masterListData.length > 0) {
@@ -43,6 +50,8 @@ function _HomePage(props) {
 			});
 
 			setListData(chunk(selectedFilter,chunkNumber));
+			setCurrentPage(1);
+			setSelectedIndex(0)
 		}
 	}
 
@@ -63,7 +72,11 @@ function _HomePage(props) {
 
 	useEffect(() => {
 		getListMoviesData();
-	}, [])
+	}, []);
+
+	const onRedirectDetail = (id) => {
+		props.history.push(`/detail?movie_id=${id}`);
+	}
 
 	return (
 		<ScreenHomePage
@@ -75,6 +88,10 @@ function _HomePage(props) {
 			masterListData={masterListData}
 			onSearchChanged={onSearchChanged}
 			dummyArr={staticArr()}
+			onRedirectDetail={onRedirectDetail}
+			options={options}
+			querySearch={querySearch}
+			history={props.history}
 			{...props}
 		/>
 	)
