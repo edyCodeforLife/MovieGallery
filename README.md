@@ -33,5 +33,7 @@ Then Do The Following (in your terminal):
 
 if Success the web apps will running on browser at: localhost:8080
 
+Thank you.
+
 
 
