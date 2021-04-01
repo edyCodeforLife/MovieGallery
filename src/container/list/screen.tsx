@@ -7,7 +7,6 @@ import { Footer } from '../../components/footer/index';
 import { CardComponent } from '../../components/card-component/card';
 import { IMoviesInterface } from '../../services/services/movies';
 
-
 interface IScreenListProps {
 	onSearchChanged():void;
 	dummyArr: number[];
@@ -32,6 +31,7 @@ function _ScreenHomePage(props:IScreenListProps
 	const { onSearchChanged, datePick, clickDateFilter, onCalendarChange, dummyArr, history, options, querySearch, onRedirectDetail, masterListData, listData, selectedIndex, loading, onChangePagination, currentPage, dateString } = props;
 
 	const mapArr = loading? dummyArr : listData && listData[selectedIndex];
+	const dataImage = '../../assets/flying-coins.png';
 	const pageTotalRelative = querySearch === "" && (datePick.start === null && datePick.end === null) ? masterListData.length : listData.length;
 
 	return (
@@ -61,6 +61,7 @@ function _ScreenHomePage(props:IScreenListProps
 							</Col>
 						)
 					})}
+					{/* <img src={dataImage}/> */}
 
 					{listData && listData[selectedIndex] && listData[selectedIndex].length > 0 && (
 						<Col md={24} xs={24}>
