@@ -62,6 +62,7 @@ function _ScreenHomePage(props:IScreenListProps
 						)
 					})}
 					{/* <img src={dataImage}/> */}
+					
 
 					{listData && listData[selectedIndex] && listData[selectedIndex].length > 0 && (
 						<Col md={24} xs={24}>
